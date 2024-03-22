@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 const accessControlMiddleware = (req, res, next) => {
     const now = new Date();
     const hour = now.getHours();
-    if (hour < 8 || hour > 17) {
+    if (hour < 8 || hour > 22) {
         return res.status(403).json({ message: 'Acesso não permitido fora do horário comercial' });
     }
     next();
